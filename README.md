@@ -32,12 +32,12 @@ v5s6有4个)，他们的onnx或torchscript计算图如下，ONNX的图可以更�
 
 ## 本项目的测试过程
 
-1. Yolov5的单个Head的单个Anchor的解析，且只分析了一个种类Person的NMS，此处没有使用LetterBox，而是暴力的将图像拉到输入尺寸的大小1280 1280，注意，你可能需要自己修改尺寸以适应自己的模型。[](./yolov5_single_head_cls_without_letterbox.ipynb)
-2. Yolov5的单个Head的单个Anchor的解析，且只分析了一个种类Person的NMS，使用LetterBox，但是auto设置为False，会将图片保持比利并使用填充灰边的方式缩放到1280 1280，注意，你可能需要自己修改letter box尺寸、stride以及grid尺寸以适应自己的模型。[](./yolov5_single_head_cls_letterbox_without_auto.ipynb)
-3. Yolov5的多个Head的多个Anchor的解析，基于以上的效果，尝试解析所有头部的所有Anchor以及所有种类。[](./yolov5_multi_head_cls_letterbox_without_auto.ipynb)
-4. 将上述成果转移到Yolov7，并应用了自己的模型，没什么复杂的，注意一些关系即可，如果你需要修改，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[](./yolov7_multi_head_cls_letterbox_without_auto.ipynb)
-5. 后来发现，开启letterbox auto可以减少图片尺寸并减少了神经网络的一些冗余的计算，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[](./yolov7_multi_head_cls_letterbox_with_auto.ipynb)
-6. 将上述yolov7开启letter box的测试结果和流程反过来应用给yolov5，如果你需要修改，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[](./yolov5_multi_head_cls_letterbox_with_auto.ipynb)
+1. Yolov5的单个Head的单个Anchor的解析，且只分析了一个种类Person的NMS，此处没有使用LetterBox，而是暴力的将图像拉到输入尺寸的大小1280 1280，注意，你可能需要自己修改尺寸以适应自己的模型。[Jupyter Notebook](./yolov5_single_head_cls_without_letterbox.ipynb)
+2. Yolov5的单个Head的单个Anchor的解析，且只分析了一个种类Person的NMS，使用LetterBox，但是auto设置为False，会将图片保持比利并使用填充灰边的方式缩放到1280 1280，注意，你可能需要自己修改letter box尺寸、stride以及grid尺寸以适应自己的模型。[Jupyter Notebook](./yolov5_single_head_cls_letterbox_without_auto.ipynb)
+3. Yolov5的多个Head的多个Anchor的解析，基于以上的效果，尝试解析所有头部的所有Anchor以及所有种类。[Jupyter Notebook](./yolov5_multi_head_cls_letterbox_without_auto.ipynb)
+4. 将上述成果转移到Yolov7，并应用了自己的模型，没什么复杂的，注意一些关系即可，如果你需要修改，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[Jupyter Notebook](./yolov7_multi_head_cls_letterbox_without_auto.ipynb)
+5. 后来发现，开启letterbox auto可以减少图片尺寸并减少了神经网络的一些冗余的计算，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[Jupyter Notebook](./yolov7_multi_head_cls_letterbox_with_auto.ipynb)
+6. 将上述yolov7开启letter box的测试结果和流程反过来应用给yolov5，如果你需要修改，修改imgsz这个变量以及一些文件路径即可，其余会全自动处理。[Jupyter Notebook](./yolov5_multi_head_cls_letterbox_with_auto.ipynb)
 
 
 
