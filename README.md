@@ -3,7 +3,7 @@ Try to decode the detect layers of yolov5 &amp; yolov7, and then realize NMS to 
 
 本测试基于Yolov5和 Yolov7，尝试对其输出检测部分 (Detect) 进行解码，多个测试文件在大部分自己实现的功能（绘图，XYWH2XYXY，自己实现class-agnostic的NMS非极大值抑制[^1]等函数）都极大雷同，你可以尝试用一个库将它们合并好，项目需要针对不同的文件放在yolov5或yolov7源代码的根目录下运行，并确保cv2读取的照片路径和模型路径存在。本测试基于Yolov5s6(img-size 1280)和自己训练的Yolov7-tiny-leaky_relu(img-size 1280)，模型本身无所谓，请针对每个测试文件改变imgsz的大小。
 
-[^1]: 注意，两个Yolo默认NMS都没有开启class-agnostic这个选项，但是不论是基于我的项目还是直观感受，class-agnostic的NMS都更符合直觉，就是NMS计算的规模会变化。假设一次NMS对x个目标的时间复杂度为O(f(x))，那么针对总共N个种类，平均每个种类有M个目标的情况下，不开启class-agnostic情况下的平均时间复杂度为O(N\*f(M))，开启class-agnostic情况下的平均时间复杂度为O(f(N\*M))，具体运算变多了还是变少了，就要看f(x)本身时间复杂度是否大于线性时间复杂度，我这里的运算复杂度f(x)是等价log(x)的。
+[^1]: 注意，两个Yolo默认NMS都没有开启class-agnostic这个选项，但是不论是基于我的项目还是直观感受，class-agnostic的NMS都更符合直觉，就是NMS计算的规模会变化。假设一次NMS对x个目标的时间复杂度为O(f(x))，那么针对总共N个种类，平均每个种类有M个目标的情况下，不开启class-agnostic情况下的平均时间复杂度为O(N\*f(M))，开启class-agnostic情况下的平均时间复杂度为O(f(N\*M))，具体运算变多了还是变少了，就要看f(x)本身时间复杂度是否大于线性时间复杂度，我这里的运算复杂度f(x)是等价x方（NMS都是O(x^2)）的。
 
 
 
