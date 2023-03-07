@@ -1,4 +1,5 @@
-# CV-Lab
+# Yolo-Detect-Layer-Visualization
+
 Try to decode the detect layers of yolov5 &amp; yolov7, and then realize NMS to the detected objects.
 
 本测试基于Yolov5和 Yolov7，尝试对其输出检测部分 (Detect) 进行解码，多个测试文件在大部分自己实现的功能（绘图，XYWH2XYXY，自己实现class-agnostic的NMS非极大值抑制[^1]等函数）都极大雷同，你可以尝试用一个库将它们合并好，项目需要针对不同的文件放在yolov5或yolov7源代码的根目录下运行，并确保cv2读取的照片路径和模型路径存在。本测试基于Yolov5s6(img-size 1280)和自己训练的Yolov7-tiny-leaky_relu(img-size 1280)，模型本身无所谓，请针对每个测试文件改变imgsz的大小。
